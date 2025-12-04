@@ -51,6 +51,11 @@ namespace GA
             }
             
             newGens[i] = gen() % 2 == 0 ? gens_[i] : otherGens[i];
+
+            // if (dis(gen) < 6) {
+            //     newGens[i] = newGens[i] == tolower(newGens[i]) ? toupper(newGens[i]) : tolower(newGens[i]);
+            //     continue;
+            // }
         }
         return {newGens};
     }

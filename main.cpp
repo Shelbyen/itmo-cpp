@@ -10,7 +10,12 @@ int main() {
             double value = 0;
             for (int i = 0; i < target_string.length(); i++)
             {
-                value += static_cast<int>(target_string[i] == c.gens()[i]);
+                // if (tolower(target_string[i]) == tolower(c.gens()[i])) {
+                //     value += 1;
+                // }
+                if (target_string[i] == c.gens()[i]) {
+                    value += 1;
+                }
             }
             return target_string.length() / value;
         };

@@ -5,6 +5,7 @@
 namespace GA
 {
     std::random_device rd;
+    std::string target_string;
 
     char genRandomChar() {
         std::mt19937 gen(rd());
@@ -16,8 +17,8 @@ namespace GA
     {
         std::mt19937 gen(rd());
         std::uniform_real_distribution<> dis(32, 126);
-        std::vector<char> ret(12);
-        for (int i = 0; i < 12; i++)
+        std::vector<char> ret(target_string.length());
+        for (int i = 0; i < target_string.length(); i++)
         {
             ret[i] = static_cast<char>(dis(gen));
             std::mt19937 gen(rd());

@@ -1,9 +1,9 @@
 #include "genetical_algorithm.cpp"
-// #include <iostream>
 
 
 int main() {
     std::string target_string = "Hello World!";
+    GA::target_string = target_string;
 
     auto fitnessFunc = [&target_string](const GA::Carrier& c)
         {
@@ -12,7 +12,6 @@ int main() {
             {
                 value += static_cast<int>(target_string[i] == c.gens()[i]);
             }
-            // std::cout << value << std::endl;s
             return target_string.length() / value;
         };
 
